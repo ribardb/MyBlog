@@ -1,0 +1,13 @@
+<div class="list-group-item flex-column align-items-start" [ngClass]="{'list-group-item':true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0 }">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">{{ post.title }}</h5>
+                  <p>{{ post.date | date : 'dd/MM/yyyy, hh:mm a' }}</p>
+                </div>
+                <p>{{ post.content }}</p>
+                <p>Nombre de likes : {{ post.loveIts }} </p>
+                <button type="button" class="btn btn-success margin-right" (click)="onLike(post)">Love it!</button>
+                <button type="button" class="btn btn-danger" (click)="onDislike(post)">Don't love it!</button>
+                <button type="button" class="btn btn-danger" (click)="onDelete(post)">Supprimer</button>
+</div>
